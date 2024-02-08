@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .container , .child-container , .child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container{
+            height: 100vh;
+        }
+
+        .child-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .child{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child-container">
+            <div class="child">
+                <p id="paraText"></p>
+            </div>
+
+            <button>START</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let x = document.querySelector('button').addEventListener('click',countDown);
+    let val = 10;
+    document.querySelector('p').innerText = val
+
+
+    console.log("Hello")
+
+
+    function countDown(){
+        val = 10;
+        setInterval(()=>{
+            if(val > 0)
+            {
+                val--;
+            }
+            document.querySelector('p').innerText = val
+        },1000)
+    }
+</script>
+</html>
